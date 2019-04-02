@@ -1,6 +1,7 @@
 ![alt text](https://i.imgur.com/V0IxO5Tl.png "SingularityNET Daemon")
 
 <img src="https://i.imgur.com/V0IxO5T.png" width="400">
+<<<<<<< HEAD
 
 The daemon is the adapter that a service can use to interface with the SingularityNET platform.
 In software architecture lingo, the daemon is a [sidecar proxy](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar), —a process deployed next to a core application (the AI service, in this case) to abstract away some architectural concerns such
@@ -72,3 +73,7 @@ The daemon's behaviour with respect to the [service type](#supported-service-typ
 
 ## Payment channel state
 The daemon stores the payment channel state in an etcddb cluster. This is detailed [here](/docs/all/mpe/payment-channel-storage).
+=======
+
+<img src="/img/daemon_diagram.png" width="400">
+>>>>>>> fc61d2fe8a069bb79d7aac250c0654d95684dce6
