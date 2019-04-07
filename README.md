@@ -2,7 +2,7 @@
 
 `_config.yml` stores configuration data. Many of these options can be specified from the command line executable but it’s easier to specify them here so you don’t have to remember them.
 
-__Please stop and re-run `jekyll serve` command after you change configuration file!__ <br> <br>Master configuration file contains global configurations and variable definitions that are read once at execution time. Changes made to `config.yml` during automatic regeneration are not loaded until the next execution.
+>__Please stop and re-run `jekyll serve` command after you change configuration file!__ <br> Master configuration file contains global configurations and variable definitions that are read once at execution time. Changes made to `config.yml` during automatic regeneration are not loaded until the next execution.
 
 ## Relative URLs
 
@@ -71,7 +71,7 @@ logo:
 
 ```
 
-__Recommended logo image size.__ <br> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
+>__Recommended logo image size.__ <br> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
 
 ### Navigation
 
@@ -120,7 +120,7 @@ content:
 
 ```
 
-__Recommended logo image size.__ <br> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
+>__Recommended logo image size.__ <br> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
 
 ### Copyright
 
@@ -166,7 +166,7 @@ tracking_code: UA-XXXXXX-X
 
 ```
 
-__Build site with environment variable!__ <br> When you run `jekyll serve`, your Google Analytics tracking code shouldn’t render at all in any pages.
+>__Build site with environment variable!__ <br> When you run `jekyll serve`, your Google Analytics tracking code shouldn’t render at all in any pages.
 
 The reason for this is if you visit your Google Analytics account, you’ll see a bunch of visits from `localhost:4000` or `127.0.0.1:4000` depending on the type of operating system you’re developing your Jekyll project on.
 
@@ -189,7 +189,7 @@ disqus_forum_shortname:
 
 ```
 
-__Build site with environment variable!__ <br> When you run `jekyll serve`, your Disqus commenting system shouldn’t render at all in any pages.
+>__Build site with environment variable!__ <br> When you run `jekyll serve`, your Disqus commenting system shouldn’t render at all in any pages.
 
 We’ll set Jekyll to only render Disqus commenting system when its environment is set to production.
 
@@ -199,4 +199,4 @@ So then, how do you get the Disqus commenting system to only show up on a produc
 
 To change favicon just replace `/favicon.ico` with your new icon. Make sure it is in `.ico` format. Dimensions should be 16px x 16px.
 
-__Favicon `.psd` file included!__ <br> We've included `.psd` file with pre-made favicon in `/designs` folder of your theme.
+>__Favicon `.psd` file included!__ <br> We've included `.psd` file with pre-made favicon in `/designs` folder of your theme.
