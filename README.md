@@ -50,7 +50,10 @@ baseurl: /project
 
 ```
 
-__Build site with environment variable!__ When you run `jekyll serve`, your `baseurl` variable shouldn’t render at all in any pages.
+<div class="callout callout--warning">
+    <p><strong>Build site with environment variable!</strong> When you run `jekyll serve`, your `baseurl` variable shouldn’t render at all in any pages.
+    </p>
+</div>
 
 We’ll set Jekyll to only render `baseurl` variable when its environment is set to production.
 
