@@ -44,13 +44,13 @@ If you’re deploying to server where your site is not going to be in `root` dir
 
 For example, if your site is going to be stored on URL that looks like this `http://example.com/project`, you’ll have to update your `baseurl` variable and it should look like this:
 
-    snet:
-    baseurl: /project
+```
+snet:
+baseurl: /project
 
+```
 
-    <div class="callout callout--warning">
-        <p><strong>Build site with environment variable!</strong> When you run `jekyll serve`, your `baseurl` variable shouldn’t render at all in any pages.</p>
-</div>
+__Build site with environment variable!__ When you run `jekyll serve`, your `baseurl` variable shouldn’t render at all in any pages.
 
 We’ll set Jekyll to only render `baseurl` variable when its environment is set to production.
 
@@ -68,9 +68,11 @@ The SingularityNET Developer Portal Theme supports a few color themes:
 
 You can update your `color_theme` variable in `_config.yml` to see changes.
 
-    snet:
-    color_theme: green
+```
+snet:
+color_theme: green
 
+```
 
 ## Header
 
@@ -78,12 +80,14 @@ You can update your `color_theme` variable in `_config.yml` to see changes.
 
 If you need logo as text, update `text` variable and leave `image` empty.
 
-    snet:
-    header:
-    logo:
-        text: Project name
-        image:
+```
+snet:
+header:
+logo:
+    text: Project name
+    image:
 
+```
 
 ### Logo with image
 
@@ -92,29 +96,31 @@ If you need logo as image, update `image` variable and set it to `true` and leav
 To set your custom logo image just upload it in place of `logo.png` here  
 `/theme/assets/images/layout/logo.png`.
 
-    snet:
-    header:
-    logo:
-        text:
-        image: true
+```
+snet:
+header:
+logo:
+    text:
+    image: true
 
+```
 
-        <div class="callout callout--warning">
-            <p><strong>Recommended logo image size.</strong> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.</p>
-</div>
+__Recommended logo image size.__ Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
 
 ### Navigation
 
 To add new items in main navigation you have to setup `nav` variable in `_config.yml`. Add as many items as you need.
 
-    snet:
-    header:
-    nav:
-        - item_name: Item 1
-          item_url: /example-url-1
-        - item_name: Item 2
-          item_url: /example-url-2
+```
+snet:
+header:
+nav:
+    - item_name: Item 1
+      item_url: /example-url-1
+    - item_name: Item 2
+      item_url: /example-url-2
 
+```
 
 ## Footer
 
@@ -122,13 +128,15 @@ To add new items in main navigation you have to setup `nav` variable in `_config
 
 If you need logo as text, update `text` variable and leave `image` empty.
 
-    snet:
-    footer:
-    content:
-        logo:
-            text: Project name
-            image:
+```
+snet:
+footer:
+content:
+    logo:
+        text: Project name
+        image:
 
+```
 
 ### Logo with image
 
@@ -136,27 +144,29 @@ If you need logo as image, update `image` variable and set it to `true` and leav
 
 To set your custom logo image just upload it in place of `logo-footer.png` here `/theme/assets/images/layout/logo-footer.png`.
 
-    snet:
-    footer:
-    content:
-        logo:
-            text:
-            image: true
+```
+snet:
+footer:
+content:
+    logo:
+        text:
+        image: true
 
+```
 
-          <div class="callout callout--warning">
-                <p><strong>Recommended logo image size.</strong> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.</p>
-</div>
+__Recommended logo image size.__ Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
 
 ### Copyright
 
 If you need to setup new footer copyright text, update `copyright` variable in your `_config.yml` file.
 
-    snet:
-    footer:
-    content:
-        copyright: Copyright &copy; 2017. - Project name <br>All rights reserved.
+```
+snet:
+footer:
+content:
+    copyright: Copyright &copy; 2017. - Project name <br>All rights reserved.
 
+```
 
 ### Social list
 
@@ -164,31 +174,33 @@ To properly setup social list update `social_list` variable in `_config.yml`. Ad
 
 At the bottom of the “Getting Started” section you can find a list of icons you can use in this list. Update `network_name` variable to add a proper icon.
 
-    snet:
-    footer:
-    social_list:
-        - network_name: facebook
-          profile_url: http://example.com
-        - network_name: twitter
-          profile_url: http://example.com
-        - network_name: instagram
-          profile_url: http://example.com
-        - network_name: youtube
-          profile_url: http://example.com
+```
+snet:
+footer:
+social_list:
+    - network_name: facebook
+      profile_url: http://example.com
+    - network_name: twitter
+      profile_url: http://example.com
+    - network_name: instagram
+      profile_url: http://example.com
+    - network_name: youtube
+      profile_url: http://example.com
 
+```
 
 ## Google Analytics
 
 To activate Google Analytics you have to update `_config.yml` with GA tracking code. You can do that with `tracking_code` variable.
 
-    snet:
-    google_analytics:
-    tracking_code: UA-XXXXXX-X
+```
+snet:
+google_analytics:
+tracking_code: UA-XXXXXX-X
 
+```
 
-    <div class="callout callout--warning">
-        <p><strong>Build site with environment variable!</strong> When you run `jekyll serve`, your Google Analytics tracking code shouldn’t render at all in any pages.</p>
-</div>
+__Build site with environment variable!__ When you run `jekyll serve`, your Google Analytics tracking code shouldn’t render at all in any pages.
 
 The reason for this is if you visit your Google Analytics account, you’ll see a bunch of visits from `localhost:4000` or `127.0.0.1:4000` depending on the type of operating system you’re developing your Jekyll project on.
 
@@ -204,14 +216,14 @@ Comments are available only on `default` page layout and you have to enable them
 
 Currently, we have integrated Discourse comments into our SingularityNET Developer Portal which link directly to topics created on [our forum](https://community.singularitynet.io/c/developers).
 
-    snet:
-    comments:
-    disqus_forum_shortname:
+```
+snet:
+comments:
+disqus_forum_shortname:
 
+```
 
-    <div class="callout callout--warning">
-        <p><strong>Build site with environment variable!</strong> When you run `jekyll serve`, your Disqus commenting system shouldn’t render at all in any pages.</p>
-</div>
+__Build site with environment variable!__ When you run `jekyll serve`, your Disqus commenting system shouldn’t render at all in any pages.
 
 We’ll set Jekyll to only render Disqus commenting system when its environment is set to production.
 
@@ -221,6 +233,4 @@ So then, how do you get the Disqus commenting system to only show up on a produc
 
 To change favicon just replace `/favicon.ico` with your new icon. Make sure it is in `.ico` format. Dimensions should be 16px x 16px.
 
-<div class="callout callout--warning">
-    <p><strong>Favicon `.psd` file included!</strong> We've included `.psd` file with pre-made favicon in `/designs` folder of your theme.</p>
-</div>
+__Favicon `.psd` file included!__ We've included `.psd` file with pre-made favicon in `/designs` folder of your theme.
