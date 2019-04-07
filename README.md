@@ -2,7 +2,9 @@
 
 `_config.yml` stores configuration data. Many of these options can be specified from the command line executable but it’s easier to specify them here so you don’t have to remember them.
 
-__Please stop and re-run `jekyll serve` command after you change configuration file!__ Master configuration file contains global configurations and variable definitions that are read once at execution time. Changes made to `config.yml` during automatic regeneration are not loaded until the next execution.
+<div class="callout callout--warning">
+__Please stop and re-run `jekyll serve` command after you change configuration file!__ <br> Master configuration file contains global configurations and variable definitions that are read once at execution time. Changes made to `config.yml` during automatic regeneration are not loaded until the next execution.
+</div>
 
 ## Relative URLs
 
