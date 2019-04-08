@@ -230,6 +230,8 @@ Maximize
 
 `maximize`
 
+<i class="icon icon--maximize" style="font-size: 25px;"></i>
+
 X (Close)
 
 `x`
