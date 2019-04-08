@@ -236,6 +236,10 @@ X (Close)
 
 `x`
 
+|ICON NAME|YML NAME|PREVIEW|
+|:----------|:---------|:--------|
+|X (Close)|`x`|<div class="icon icon--x" style="font-size: 25px;"></div>|
+
 ## Change Log
 
 All notable changes to this project will be documented here. This project adheres to [Semantic Versioning](http://semver.org/).
