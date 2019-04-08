@@ -1,53 +1,257 @@
-## Web hosting providers (FTP)
+## What is the SingularityNET Developer Portal Theme?
 
-To upload a Jekyll site to a web host using FTP, simply run the `JEKYLL_ENV=production jekyll build` command and copy the generated `_site` folder to the root folder of your hosting account.
+The SingularityNET Developer Portal Theme is [Jekyll](https://jekyllrb.com/) theme created for project documentations.  
+You can use it with [GitHub](https://pages.github.com/) and [GitLab Pages](https://about.gitlab.com/features/pages/) as well as a standalone project.
 
-## GitHub Pages
+## What is Jekyll?
 
-**What are GitHub Pages?** <br> [GitHub Pages](https://pages.github.com/) are public web pages for users, organisations, and repositories, that are freely hosted on GitHub’s `github.io` domain or on a custom domain name of your choice.
+[Jekyll](https://jekyllrb.com/) is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like [Markdown](https://daringfireball.net/projects/markdown/)) and [Liquid](https://github.com/Shopify/liquid/wiki) renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favourite web server.
 
-**Full GitHub Pages deployment guide.** <br> We recommend you to read full GitHub Pages deployment guide [here](http://jekyllrb.com/docs/github-pages/).
+>__Full Jekyll documentation__ <br> You can find full Jekyll documentation [here](https://jekyllrb.com/docs/home/).
 
->__Set relative URLs properly!__ <br> Please take a look at Relative URLs part of "Configuration" section before you deploy your site.
+## Install Jekyll
 
->__Build site with environment variable!__ <br> Please build your site with proper environment variable before you deploy. Your build command should look like this `JEKYLL_ENV=production jekyll build`.
+### Requirements
 
-### User and Organisation Pages
+Installing Jekyll should be straight-forward if all requirements are met. Before you start, make sure your system has the following:
 
-User and organisation pages live in a special GitHub repository dedicated to only the GitHub Pages files. This repository must be named after the account name. For example, [@mojombo’s user page repository](https://github.com/mojombo/mojombo.github.io) has the name `mojombo.github.io`.
+*   GNU/Linux, Unix, or macOS
+*   [Ruby](https://www.ruby-lang.org/en/downloads/) version 2.0 or above, including all development headers
+*   [RubyGems](https://rubygems.org/pages/download)
+*   [GCC](https://gcc.gnu.org/install/) and [Make](https://www.gnu.org/software/make/) (in case your system doesn’t have them installed, which you can check by running `gcc -v` and `make -v` in your system’s command line interface)
 
-Content from the `master` branch of your repository will be used to build and publish the GitHub Pages site, so make sure your `_site` directory content is stored there.
+### Install with RubyGems
 
-### Project Pages
+We suggest installing Jekyll via [RubyGems](https://rubygems.org/pages/download). On a terminal prompt, run the following commands:
 
-Unlike user and organisation pages, project pages are kept in the same repository as the project they are for, except that the website content is stored in a specially named `gh-pages` branch or in a `/docs` folder on the `master` branch.
+```
+$ gem install jekyll
+$ gem install jekyll-redirect-from
 
-Content from the `gh-pages` branch or `/docs` folder on your `master` branch of your repository will be used to build and publish the GitHub Pages site, so make sure your `_site` directory content is stored there.
+```
 
-Output will become available under a subpath of your user pages subdomain, such as `username.github.io/project` (unless a custom domain is specified).
+Jekyll’s gem dependencies are automatically installed by the first command, but the developer portal needs the \`jekyll-redirect-from\` plugin too.
 
-## GitLab Pages
+>__Full Jekyll installation guide__ <br> You can find full Jekyll installation guide [here](https://jekyllrb.com/docs/installation/).
 
-**What are GitLab Pages?** <br> With [GitLab Pages](https://about.gitlab.com/features/pages/) you can create static websites for your GitLab projects, groups, or user accounts. Connect as many customs domains as you like and bring your own TLS certificate to secure them.
+## Starting a local SingularityNET Developer Portal
 
-**Full GitLab Pages deployment guide.** <br> We recommend you to read full GitLab Pages deployment guide [here](https://docs.gitlab.com/ee/user/project/pages/).
+### Download
 
->__Set relative URLs properly!__ <br> Please take a look at Relative URLs part of "Configuration" section before you deploy your site.
+Get the SingularityNET Developer Portal sources from [Github](https://github.com/singnet/dev-portal), either download an archive or fetch with git clone.
 
->__Build site with environment variable!__ <br> Please build your site with proper environment variable before you deploy. Your build command should look like this `JEKYLL_ENV=production jekyll build`.
+### Start development server
 
-### User and Organisation Pages
+Jekyll comes with a built-in development server that will allow you to preview what the generated site will look like in your browser locally.
 
-User and organisation pages live in a special GitLab repository dedicated to only the GitLab Pages files. This repository must be named after the account name.
+You can run this commands inside theme folder:
 
-For example, if you create a project called `john.gitlab.io` under your username, `john`, your project URL will be `https://gitlab.com/john/john.gitlab.io`. Once you enable GitLab Pages for your project, your website will be published under `https://john.gitlab.io`.
+```
+$ jekyll serve
+# A development server will run at http://localhost:4000/
+# Auto-regeneration: enabled. Use `--no-watch` to disable.
 
-Content from the `gl-pages` branch of your repository will be used to build and publish the GitLab Pages site, so make sure your `_site` directory content is stored there.
+$ jekyll serve --no-watch
+# Same as `jekyll serve` but will not watch for changes.
 
-### Project Pages
+$ jekyll serve --detach
+# Same as `jekyll serve` but will detach from the current terminal.
+# If you need to kill the server, you can `kill -9 1234` where "1234" is the PID.
+# If you cannot find the PID, then do, `ps aux | grep jekyll` and kill the instance.
 
-Unlike user and organisation pages, project pages are kept in the same repository as the project they are for, except that the website content is stored in a specially named `gl-pages` branch.
+```
 
-Content from the `gl-pages` branch of your repository will be used to build and publish the GitLab Pages site, so make sure your `_site` directory content is stored there.
+## Directory structure
 
-Output will become available under a subpath of your user pages subdomain, such as `username.gitlab.io/project` (unless a custom domain is specified).
+This is the basic directory structure which looks like this:
+
+```
+snet/
+├── theme/ # snet theme source files.
+├── _config.yml # Stores Jekyll configuration data.
+├── .eslintrc # ESlint configuration file.
+├── .gitignore # Git related file which specifies intentionally untracked files to ignore.
+├── .gitlab-ci.yml # File used by GitLab Runner to manage your project's jobs.
+├── .htaccess # Configuration file for use on web servers running the Apache Web Server software.
+├── 404.md # Error 404 layout markdown template.
+├── default.md # Default layout markdown template.
+├── favicon.ico # Favicon icon.
+└── index.md # Homepage layout markdown template.
+
+```
+
+## Icons
+
+List of icons you can use in some places such as social list in footer or buttons in homepage layout.
+
+Icon name
+
+YML name
+
+Preview
+
+Behance
+
+`behance`
+
+Bitbucket
+
+`bitbucket`
+
+Codepen
+
+`codepen`
+
+Dribbble
+
+`dribbble`
+
+Dropbox
+
+`dropbox`
+
+Facebook
+
+`facebook`
+
+GitHub
+
+`github`
+
+GitLab
+
+`gitlab`
+
+Google Plus
+
+`google-plus`
+
+Gulp
+
+`gulp`
+
+Instagram
+
+`instagram`
+
+Kickstarter
+
+`kickstarter`
+
+LinkedIn
+
+`linkedin`
+
+Medium
+
+`medium`
+
+Meetup
+
+`meetup`
+
+Pocket
+
+`pocket`
+
+Product Hunt
+
+`producthunt`
+
+Reddit
+
+`reddit`
+
+Skype
+
+`skype`
+
+Slack
+
+`slack`
+
+Stack Overflow
+
+`stackoverflow`
+
+Trello
+
+`trello`
+
+Tumblr
+
+`tumblr`
+
+Twitter
+
+`twitter`
+
+YouTube
+
+`youtube`
+
+Arrow down
+
+`arrow-down`
+
+Arrow left
+
+`arrow-left`
+
+Arrow right
+
+`arrow-right`
+
+Arrow up
+
+`arrow-up`
+
+Chevron down
+
+`chevron-down`
+
+Chevron left
+
+`chevron-left`
+
+Chevron right
+
+`chevron-right`
+
+Chevron up
+
+`chevron-up`
+
+Home
+
+`home`
+
+Maximize
+
+`maximize`
+
+X (Close)
+
+`x`
+
+## Change Log
+
+All notable changes to this project will be documented here. This project adheres to [Semantic Versioning](http://semver.org/).
+
+### \[v1.0.0\] - 2017-12-08
+
+Initial release.
+
+## Credits
+
+List of vendor assets we used to create this theme:
+
+*   [Bootstrap](https://github.com/twbs/bootstrap) ([MIT License](https://github.com/twbs/bootstrap/blob/master/LICENSE))
+*   [normalize.css](https://github.com/necolas/normalize.css) ([MIT License](https://github.com/necolas/normalize.css/blob/master/LICENSE.md))
+*   [jQuery](http://jquery.com) ([MIT License](https://tldrlegal.com/license/mit-license))
+*   [jquery-match-height](https://github.com/liabru/jquery-match-height) ([MIT License](https://github.com/liabru/jquery-match-height/blob/master/LICENSE))
+*   [simple-icons](https://github.com/simple-icons/simple-icons) ([CC0-1.0 License](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md))
+*   [feather](https://github.com/colebemis/feather) ([MIT License](https://github.com/colebemis/feather/blob/master/LICENSE))
+*   [Montserrat](https://fonts.google.com/specimen/Montserrat) ([SIL Open Font License, 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL))
+*   [Noto Sans](https://fonts.google.com/specimen/Noto+Sans) ([Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html))
+*   [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro) ([SIL Open Font License, 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL))
