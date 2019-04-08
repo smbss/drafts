@@ -182,64 +182,24 @@ Tumblr
 
 `tumblr`
 
-Twitter
-
-`twitter`
-
-YouTube
-
-`youtube`
-
-Arrow down
-
-`arrow-down`
-
-Arrow left
-
-`arrow-left`
-
-Arrow right
-
-`arrow-right`
-
-Arrow up
-
-`arrow-up`
-
-Chevron down
-
-`chevron-down`
-
-Chevron left
-
-`chevron-left`
-
-Chevron right
-
-`chevron-right`
-
-Chevron up
-
-`chevron-up`
-
-Home
-
-`home`
-
-Maximize
-
-`maximize`
-
-<i class="icon icon--maximize" style="font-size: 25px;"></i>
-
-X (Close)
-
-`x`
 
 |ICON NAME|YML NAME|PREVIEW|
 |:----------|:---------|:--------|
-|X (Close)|`x`|<div class="icon icon--x" style="font-size: 25px;"></div>|
-
+|Arrow up|`arrow-up`| |
+|Twitter|`twitter`| |
+|YouTube|`youtube`| |
+|Arrow down|`arrow-down`| |
+|Arrow left|`arrow-left`| |
+|Arrow up|`arrow-up`| |
+|Arrow right|`arrow-right`| |
+|Arrow up|`arrow-up`| |
+|Chevron down|`chevron-down`| |
+|Chevron left|`chevron-left`| |
+|Chevron right|`chevron-right`| |
+|Chevron up|`chevron-up`| |
+|Home|`home`| |
+|Maximize|`maximize`| |
+|X (Close)|`x`| |
 ## Change Log
 
 All notable changes to this project will be documented here. This project adheres to [Semantic Versioning](http://semver.org/).
