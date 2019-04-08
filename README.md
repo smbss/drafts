@@ -1,202 +1,53 @@
-## Introduction
+## Web hosting providers (FTP)
 
-`_config.yml` stores configuration data. Many of these options can be specified from the command line executable but it’s easier to specify them here so you don’t have to remember them.
+To upload a Jekyll site to a web host using FTP, simply run the `JEKYLL_ENV=production jekyll build` command and copy the generated `_site` folder to the root folder of your hosting account.
 
->__Please stop and re-run `jekyll serve` command after you change configuration file!__ <br> Master configuration file contains global configurations and variable definitions that are read once at execution time. Changes made to `config.yml` during automatic regeneration are not loaded until the next execution.
+## GitHub Pages
 
-## Relative URLs
+**What are GitHub Pages?** <br> [GitHub Pages](https://pages.github.com/) are public web pages for users, organisations, and repositories, that are freely hosted on GitHub’s `github.io` domain or on a custom domain name of your choice.
 
-If you’re deploying to server where your site is not going to be in `root` directory, you should setup `baseurl` variable.
+**Full GitHub Pages deployment guide.** <br> We recommend you to read full GitHub Pages deployment guide [here](http://jekyllrb.com/docs/github-pages/).
 
-For example, if your site is going to be stored on URL that looks like this `http://example.com/project`, you’ll have to update your `baseurl` variable and it should look like this:
+>__Set relative URLs properly!__ <br> Please take a look at Relative URLs part of "Configuration" section before you deploy your site.
 
-```
-snet:
-baseurl: /project
+>__Build site with environment variable!__ <br> Please build your site with proper environment variable before you deploy. Your build command should look like this `JEKYLL_ENV=production jekyll build`.
 
-```
+### User and Organisation Pages
 
->__Build site with environment variable!__ <br> When you run `jekyll serve`, your `baseurl` variable shouldn’t render at all in any pages.
+User and organisation pages live in a special GitHub repository dedicated to only the GitHub Pages files. This repository must be named after the account name. For example, [@mojombo’s user page repository](https://github.com/mojombo/mojombo.github.io) has the name `mojombo.github.io`.
 
-We’ll set Jekyll to only render `baseurl` variable when its environment is set to production.
+Content from the `master` branch of your repository will be used to build and publish the GitHub Pages site, so make sure your `_site` directory content is stored there.
 
-So then, how do you get the `baseurl` variable to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with `JEKYLL_ENV=production` so the complete command looks like this one: `JEKYLL_ENV=production jekyll build`
+### Project Pages
 
-## Color themes
+Unlike user and organisation pages, project pages are kept in the same repository as the project they are for, except that the website content is stored in a specially named `gh-pages` branch or in a `/docs` folder on the `master` branch.
 
-The SingularityNET Developer Portal Theme supports a few color themes:
+Content from the `gh-pages` branch or `/docs` folder on your `master` branch of your repository will be used to build and publish the GitHub Pages site, so make sure your `_site` directory content is stored there.
 
-*   blue (default SingularityNET theme)
-*   green
-*   purple
-*   red
-*   yellow
+Output will become available under a subpath of your user pages subdomain, such as `username.github.io/project` (unless a custom domain is specified).
 
-You can update your `color_theme` variable in `_config.yml` to see changes.
+## GitLab Pages
 
-```
-snet:
-color_theme: green
+**What are GitLab Pages?** <br> With [GitLab Pages](https://about.gitlab.com/features/pages/) you can create static websites for your GitLab projects, groups, or user accounts. Connect as many customs domains as you like and bring your own TLS certificate to secure them.
 
-```
+**Full GitLab Pages deployment guide.** <br> We recommend you to read full GitLab Pages deployment guide [here](https://docs.gitlab.com/ee/user/project/pages/).
 
-## Header
+>__Set relative URLs properly!__ <br> Please take a look at Relative URLs part of "Configuration" section before you deploy your site.
 
-### Logo with text
+>__Build site with environment variable!__ <br> Please build your site with proper environment variable before you deploy. Your build command should look like this `JEKYLL_ENV=production jekyll build`.
 
-If you need logo as text, update `text` variable and leave `image` empty.
+### User and Organisation Pages
 
-```
-snet:
-header:
-logo:
-    text: Project name
-    image:
+User and organisation pages live in a special GitLab repository dedicated to only the GitLab Pages files. This repository must be named after the account name.
 
-```
+For example, if you create a project called `john.gitlab.io` under your username, `john`, your project URL will be `https://gitlab.com/john/john.gitlab.io`. Once you enable GitLab Pages for your project, your website will be published under `https://john.gitlab.io`.
 
-### Logo with image
+Content from the `gl-pages` branch of your repository will be used to build and publish the GitLab Pages site, so make sure your `_site` directory content is stored there.
 
-If you need logo as image, update `image` variable and set it to `true` and leave `text` empty.
+### Project Pages
 
-To set your custom logo image just upload it in place of `logo.png` here  
-`/theme/assets/images/layout/logo.png`.
+Unlike user and organisation pages, project pages are kept in the same repository as the project they are for, except that the website content is stored in a specially named `gl-pages` branch.
 
-```
-snet:
-header:
-logo:
-    text:
-    image: true
+Content from the `gl-pages` branch of your repository will be used to build and publish the GitLab Pages site, so make sure your `_site` directory content is stored there.
 
-```
-
->__Recommended logo image size.__ <br> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
-
-### Navigation
-
-To add new items in main navigation you have to setup `nav` variable in `_config.yml`. Add as many items as you need.
-
-```
-snet:
-header:
-nav:
-    - item_name: Item 1
-      item_url: /example-url-1
-    - item_name: Item 2
-      item_url: /example-url-2
-
-```
-
-## Footer
-
-### Logo with text
-
-If you need logo as text, update `text` variable and leave `image` empty.
-
-```
-snet:
-footer:
-content:
-    logo:
-        text: Project name
-        image:
-
-```
-
-### Logo with image
-
-If you need logo as image, update `image` variable and set it to `true` and leave `text` empty.
-
-To set your custom logo image just upload it in place of `logo-footer.png` here `/theme/assets/images/layout/logo-footer.png`.
-
-```
-snet:
-footer:
-content:
-    logo:
-        text:
-        image: true
-
-```
-
->__Recommended logo image size.__ <br> Recommended logo image size is 400px x 178px. With this size you are sure you'll have retina ready logo image.
-
-### Copyright
-
-If you need to setup new footer copyright text, update `copyright` variable in your `_config.yml` file.
-
-```
-snet:
-footer:
-content:
-    copyright: Copyright &copy; 2017. - Project name <br>All rights reserved.
-
-```
-
-### Social list
-
-To properly setup social list update `social_list` variable in `_config.yml`. Add as many items as you need.
-
-At the bottom of the “Getting Started” section you can find a list of icons you can use in this list. Update `network_name` variable to add a proper icon.
-
-```
-snet:
-footer:
-social_list:
-    - network_name: facebook
-      profile_url: http://example.com
-    - network_name: twitter
-      profile_url: http://example.com
-    - network_name: instagram
-      profile_url: http://example.com
-    - network_name: youtube
-      profile_url: http://example.com
-
-```
-
-## Google Analytics
-
-To activate Google Analytics you have to update `_config.yml` with GA tracking code. You can do that with `tracking_code` variable.
-
-```
-snet:
-google_analytics:
-tracking_code: UA-XXXXXX-X
-
-```
-
->__Build site with environment variable!__ <br> When you run `jekyll serve`, your Google Analytics tracking code shouldn’t render at all in any pages.
-
-The reason for this is if you visit your Google Analytics account, you’ll see a bunch of visits from `localhost:4000` or `127.0.0.1:4000` depending on the type of operating system you’re developing your Jekyll project on.
-
-This can potentially muddy up your analytics, so to mitigate this problem, we’ll set Jekyll to only render Google Analytics when its environment is set to production.
-
-So then, how do you get the analytics to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with `JEKYLL_ENV=production` so the complete command looks like this one: `JEKYLL_ENV=production jekyll build`
-
-## Disqus comments
-
-To activate Disqus commenting system you have to update `_config.yml` with the Disqus forum shortname. You can do that with `disqus_forum_shortname` variable.
-
-Comments are available only on `default` page layout and you have to enable them on new pages with `comments: true` variable.
-
-Currently, we have integrated Discourse comments into our SingularityNET Developer Portal which link directly to topics created on [our forum](https://community.singularitynet.io/c/developers).
-
-```
-snet:
-comments:
-disqus_forum_shortname:
-
-```
-
->__Build site with environment variable!__ <br> When you run `jekyll serve`, your Disqus commenting system shouldn’t render at all in any pages.
-
-We’ll set Jekyll to only render Disqus commenting system when its environment is set to production.
-
-So then, how do you get the Disqus commenting system to only show up on a production environment? When building your Jekyll project with jekyll build, you’ll want to prefix it with `JEKYLL_ENV=production` so the complete command looks like this one: `JEKYLL_ENV=production jekyll build`
-
-## Favicon
-
-To change favicon just replace `/favicon.ico` with your new icon. Make sure it is in `.ico` format. Dimensions should be 16px x 16px.
-
->__Favicon `.psd` file included!__ <br> We've included `.psd` file with pre-made favicon in `/designs` folder of your theme.
+Output will become available under a subpath of your user pages subdomain, such as `username.gitlab.io/project` (unless a custom domain is specified).
