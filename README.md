@@ -86,8 +86,7 @@ List of icons you can use in some places such as social list in footer or button
 
 |ICON NAME|YML NAME|PREVIEW|
 |:----------|:---------|:--------|
-|Behance|`behance`|<i class="fab fa-window-close" aria-hidden="true"></i>
-|
+|Behance|`behance`|<i class="fab fa-window-close" aria-hidden="true"></i>|
 |Bitbucket|`bitbucket`| |
 |Codepen|`codepen`| |
 |Dribbble|`dribbble`| |
