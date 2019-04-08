@@ -86,9 +86,6 @@ List of icons you can use in some places such as social list in footer or button
 
 |ICON NAME|YML NAME|PREVIEW|
 |:----------|:---------|:--------|
-|Google Plus|`google-plus`| |
-|Google Plus|`google-plus`| |
-|Google Plus|`google-plus`| |
 |Behance|`behance`| |
 |Bitbucket|`bitbucket`| |
 |Codepen|`codepen`| |
