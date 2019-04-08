@@ -84,108 +84,34 @@ snet/
 
 List of icons you can use in some places such as social list in footer or buttons in homepage layout.
 
-Icon name
-
-YML name
-
-Preview
-
-Behance
-
-`behance`
-
-Bitbucket
-
-`bitbucket`
-
-Codepen
-
-`codepen`
-
-Dribbble
-
-`dribbble`
-
-Dropbox
-
-`dropbox`
-
-Facebook
-
-`facebook`
-
-GitHub
-
-`github`
-
-GitLab
-
-`gitlab`
-
-Google Plus
-
-`google-plus`
-
-Gulp
-
-`gulp`
-
-Instagram
-
-`instagram`
-
-Kickstarter
-
-`kickstarter`
-
-LinkedIn
-
-`linkedin`
-
-Medium
-
-`medium`
-
-Meetup
-
-`meetup`
-
-Pocket
-
-`pocket`
-
-Product Hunt
-
-`producthunt`
-
-Reddit
-
-`reddit`
-
-Skype
-
-`skype`
-
-Slack
-
-`slack`
-
-Stack Overflow
-
-`stackoverflow`
-
-Trello
-
-`trello`
-
-Tumblr
-
-`tumblr`
-
-
 |ICON NAME|YML NAME|PREVIEW|
 |:----------|:---------|:--------|
-|Arrow up|`arrow-up`| |
+|Google Plus|`google-plus`| |
+|Google Plus|`google-plus`| |
+|Google Plus|`google-plus`| |
+|Behance|`behance`| |
+|Bitbucket|`bitbucket`| |
+|Codepen|`codepen`| |
+|Dribbble|`dribbble`| |
+|Dropbox|`dropbox`| |
+|Facebook|`facebook`| |
+|GitHub|`github`| |
+|GitLab|`gitlab`| |
+|Google Plus|`google-plus`| |
+|Gulp|`gulp`| |
+|Instagram|`instagram`| |
+|Kickstarter|`kickstarter`| |
+|LinkedIn|`linkedin`| |
+|Medium|`medium`| |
+|Meetup|`meetup`| |
+|Pocket|`pocket`| |
+|Product Hunt|`producthunt`| |
+|Reddit|`reddit`| |
+|Skype|`skype`| |
+|Slack|`slack`| |
+|Stack Overflow|`stackoverflow`| |
+|Trello|`trello`| |
+|Tumblr|`tumblr`| |
 |Twitter|`twitter`| |
 |YouTube|`youtube`| |
 |Arrow down|`arrow-down`| |
